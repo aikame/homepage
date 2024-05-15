@@ -1,5 +1,9 @@
+:root {
+    --bg-img: url("wp-14.png");
+}
+
 body {
-    background-image: url("wp-11.png");
+    background-image: var(--bg-img);
     background-size: cover;
     background-repeat: no-repeat;
 }
