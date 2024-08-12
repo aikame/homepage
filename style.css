@@ -1,5 +1,5 @@
 :root {
-    --bg-img: url("wp-14.png");
+    --bg-img: url("wp-11.png");
 }
 
 body {
@@ -21,10 +21,11 @@ a:hover {
     text-decoration: wavy;
     font-style: italic;
     transition: all;
-    transition-duration: 500ms;
+    transition-duration: 200ms;
 }
 
 input[type=text] {
+    color:rgb(176, 189, 218);
     background-color: rgb(57, 69, 80);
     border: 1px solid rgba(240, 248, 255, 0.13);
     text-align: center;
@@ -35,12 +36,11 @@ input[type=text] {
     outline-color: rgba(0, 0, 0, 0);
 }
 
-input[type=text]:focus {
-    border: 0px solid rgba(240, 248, 255, 0.329);
-    border-radius: 0px;
-    color:aliceblue;
+input[type=text]:focus, textarea:focus[type=text] {
+    border: none;
+    color:rgb(176, 189, 218);
     outline-color: rgba(0, 0, 0, 0);
-    outline-style: hidden;
+    /*outline: none;*/
 }
 
 input[type=submit] {
