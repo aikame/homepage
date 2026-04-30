@@ -2,10 +2,16 @@
     --bg-img: url("wp-11.png");
 }
 
+* {
+    font-family: 'IosevkaTermSlab Nerd Font';
+}
+
 body {
     background-image: var(--bg-img);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps image from scrolling */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-size: cover; 
 }
 
 a {
@@ -13,15 +19,14 @@ a {
     border-radius: 10px;
     color:rgb(179, 196, 209);
     text-decoration: none;
+    transition: 0.2s ease-in-out;
 }
 
 a:hover {
     color:rgb(46, 59, 70);
     background-color: rgb(99, 114, 128);
     text-decoration: wavy;
-    font-style: italic;
-    transition: all;
-    transition-duration: 200ms;
+    scale: 1.1;
 }
 
 input[type=text] {
@@ -29,18 +34,22 @@ input[type=text] {
     background-color: rgb(57, 69, 80);
     border: 1px solid rgba(240, 248, 255, 0.13);
     text-align: center;
-    font-family: 'Iosevka';
     margin: 1em;
     margin-right: 0;
     height: 17px;
     outline-color: rgba(0, 0, 0, 0);
+    transition: border-color 0.1s ease-in-out;
+}
+
+input[type=text]:hover {
+    border-color: #aaaaaa;
 }
 
 input[type=text]:focus, textarea:focus[type=text] {
-    border: none;
+    border: 1px solid #a0a0a0;
     color:rgb(176, 189, 218);
     outline-color: rgba(0, 0, 0, 0);
-    /*outline: none;*/
+    outline: none;
 }
 
 input[type=submit] {
@@ -52,7 +61,14 @@ input[type=submit] {
     color:rgb(179, 196, 209);
 }
 
+input[type=submit]:hover {
+    background-color:  rgb(179, 196, 209);
+    color: rgb(57, 69, 80);
+    transition: 0.2s ease-in-out;
+} 
+
 .main-block {
+    display: grid;
     position: fixed;
     inset: 0px;
     width: 25rem;
@@ -61,7 +77,6 @@ input[type=submit] {
     max-height: 100vh;
     margin: auto;
     color: aliceblue;
-    font-family: 'Iosevka';
     padding: 2em;
     border-radius: 10px;
     background: rgb(57, 69, 80);
@@ -88,11 +103,21 @@ input[type=submit] {
 .search {
     display: flex;
     text-align: center;
-    font-family: 'Iosevka';
     width: -webkit-fill-available;
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: stretch;
     justify-content: center;
     align-items: center;
+}
+
+.clock {
+    background-color: rgb(57, 69, 80);
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    color:rgb(179, 196, 209);
 }

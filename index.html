@@ -4,21 +4,19 @@
         <title>Home</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body onload="clock()">
+        <div class="clock" id="clock"></div>
         <div class="main-block">
             <div class="links">
                 <div class="links-row">
-                    <a href="https://vk.com">VK</a>
+                    <a href="https://reddit.com">Reddit</a>
                     <a href="https://youtube.com">Youtube</a>
                     <a href="https://github.com">Github</a>
                     <a href="https://instagram.com">Instagram</a>
-                    <a href="https://songsterr.com">Songsterr</a>
                 </div>
                 <div class="links-row">
                     <a href="https://dns-shop.ru">DNS</a>
                     <a href="https://rutracker.org">Rutracker</a>
-                    <a href="https://wildberries.ru">Wildberries</a>
-                    <a href="https://e.sfu-kras.ru">E-course</a>
                     <a href="https://gmail.conm">Gmail</a>
                 </div>
             </div>
@@ -29,3 +27,17 @@
         </div>
     </body>
 </html>
+
+<script>
+    function clock() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = addZero(today.getMinutes());
+        document.getElementById('clock').innerHTML = h + ':' + m;
+        setTimeout(clock, 1000);
+    }
+    function addZero(i) {
+        if (i < 10) {i = "0" + i};
+        return i;
+    }
+</script>
